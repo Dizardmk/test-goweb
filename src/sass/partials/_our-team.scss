@@ -1,0 +1,51 @@
+@use '../variables' as *;
+
+.our-team {
+  padding: 50px 0;
+
+  & .container {
+    @extend %flex-center;
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    @include font(18px, 30px);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-weight: 300;
+    @include font(38px, 48px);
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 10px;
+  }
+
+  &__item {
+    width: 280px;
+    height: auto;
+  }
+
+  &__name {
+    @include font(23px, 29px);
+    font-weight: 400;
+    text-align: center;
+    margin: 15px 0 11px;
+  }
+
+  &__position {
+    text-align: center;
+  }
+}

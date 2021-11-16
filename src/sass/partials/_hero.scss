@@ -1,0 +1,56 @@
+@use '../variables' as *;
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../images/home/showcase.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 144px 0 95px;
+
+  & .container {
+    @extend %flex-center;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 300;
+    @include font(52px, 66px);
+    text-align: center;
+    color: $hero-text-color;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    @include font(22px, 37px);
+    text-align: center;
+    color: $hero-text-color;
+    margin-bottom: 27px;
+  }
+
+  &__button {
+    @extend %flex-center;
+    width: 156px;
+    height: 45px;
+    background-color: $accent-color;
+    border: none;
+    border-radius: 5px;
+    color: $secondary-text-color;
+  }
+
+  &__button-icon {
+    width: 7.26px;
+    height: 11.25px;
+    fill: $secondary-text-color;
+    margin-right: 5.87px;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url('../images/home/showcase@2x.jpg');
+  }
+}

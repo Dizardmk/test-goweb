@@ -1,0 +1,55 @@
+@use '../variables' as *;
+
+.blog {
+  background-color: $blog-bg-color;
+
+  &__image-wrapper {
+    width: calc(100% + 40px);
+    height: 247px;
+    background-image: url('../images/home/blog.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: -20px;
+  }
+
+  &__info-wrapper {
+    padding: 30px 0;
+  }
+
+  &__subtitle {
+    @include font(18px, 30px);
+    color: $secondary-text-color;
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    font-weight: 300;
+    @include font(38px, 48px);
+    color: $secondary-text-color;
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    color: $secondary-text-color;
+    margin-bottom: 14px;
+  }
+
+  &__button {
+    width: 184px;
+    height: 47px;
+    border: 1px solid $secondary-text-color;
+    border-radius: 5px;
+    color: $secondary-text-color;
+    background-color: inherit;
+    text-align: center;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .blog__image-wrapper {
+    background-image: url('../images/home/blog@2x.jpg');
+  }
+}

@@ -1,0 +1,47 @@
+@use '../variables' as *;
+
+.header {
+  // position: fixed;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  padding: 21px 0 5px;
+  margin-bottom: -108px;
+
+  &__wrapper {
+    @extend %flex-center;
+    flex-direction: column;
+  }
+
+  &__logo {
+    @extend %flex-center;
+    @include font(32px, 42px);
+    color: $secondary-text-color;
+    margin-bottom: 14px;
+  }
+
+  &__logo-icon {
+    width: 39.31px;
+    height: 30.63px;
+    margin-right: 5.69px;
+    fill: $accent-color;
+  }
+
+  &__logo-part {
+    color: $accent-color;
+  }
+}
+
+.navigation {
+  &__list {
+    @extend %flex-center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+  }
+
+  &__link {
+    color: $secondary-text-color;
+  }
+}
