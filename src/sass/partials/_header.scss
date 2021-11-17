@@ -1,10 +1,10 @@
 @use '../variables' as *;
 
 .header {
+  padding: 21px 0 5px;
+  margin-bottom: -104px;
   // position: fixed;
   // background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-  padding: 21px 0 5px;
-  margin-bottom: -108px;
 
   &__wrapper {
     @extend %flex-center;
@@ -15,7 +15,7 @@
     @extend %flex-center;
     @include font(32px, 42px);
     color: $secondary-text-color;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   &__logo-icon {
@@ -35,13 +35,75 @@
     @extend %flex-center;
   }
 
-  &__item {
-    &:not(:last-child) {
-      margin-right: 12px;
-    }
+  &__item:not(:last-child) {
+    margin-right: 12px;
   }
 
   &__link {
     color: $secondary-text-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding-top: 11px;
+    margin-bottom: -58px;
+
+    &__wrapper {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    &__logo {
+      margin-bottom: 0;
+    }
+
+    &__logo-icon {
+      margin-right: 9.69px;
+    }
+  }
+
+  .navigation {
+    &__item {
+      @include font(18px, 28px);
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 18px;
+    }
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .header__logo {
+    transition: all 0.2s linear;
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+  }
+
+  .navigation {
+    &__item {
+      position: relative;
+      transition: all 0.2s linear;
+      &:focus,
+      &:hover {
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background-color: $accent-color;
+        }
+      }
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 38px;
+    }
   }
 }

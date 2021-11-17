@@ -43,6 +43,8 @@
     color: $secondary-text-color;
     background-color: inherit;
     text-align: center;
+    @include font(16px, 26px);
+    cursor: pointer;
   }
 }
 
@@ -51,5 +53,57 @@
   screen and (min-resolution: 2dppx) {
   .blog__image-wrapper {
     background-image: url('../images/home/blog@2x.jpg');
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .blog {
+    & .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+    }
+
+    &__image-wrapper {
+      width: 100%;
+      height: 100%;
+      margin-left: -30px;
+    }
+
+    &__subtitle {
+      @include font(20px, 33px);
+    }
+
+    &__text {
+      @include font(18px, 28px);
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      width: 196px;
+      height: 50px;
+      @include font(18px, 28px);
+    }
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .blog {
+    &__info-wrapper {
+      padding: 112px 0;
+    }
+
+    &__text {
+      margin-bottom: 17px;
+    }
+
+    &__button {
+      transition: all 0.2s linear;
+      &:focus,
+      &:hover {
+        color: $blog-bg-color;
+        background-color: $secondary-text-color;
+      }
+    }
   }
 }

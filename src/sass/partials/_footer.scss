@@ -1,1 +1,61 @@
 @use '../variables' as *;
+
+.footer {
+  background-color: $footer-bg-color;
+  padding: 20px 0;
+
+  &__text {
+    text-align: center;
+    color: $secondary-text-color;
+    margin-top: 10px;
+  }
+}
+
+.social {
+  @extend %flex-center;
+
+  &__item {
+    width: 35px;
+    height: 35px;
+
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    fill: $secondary-text-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding-bottom: 16px;
+
+    &__text {
+      @include font(18px, 28px);
+    }
+  }
+
+  .social {
+    &__item:not(:last-child) {
+      margin-right: 25px;
+    }
+
+    &__icon {
+      transition: all 0.2s linear;
+      &:focus,
+      &:hover {
+        fill: $accent-color;
+      }
+    }
+  }
+}

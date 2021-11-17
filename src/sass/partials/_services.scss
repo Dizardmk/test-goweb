@@ -3,13 +3,16 @@
 .services {
   padding: 30px 0;
 
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 18px;
+  }
+
   &__item {
     @extend %flex-center;
     flex-direction: column;
-
-    &:not(:last-child) {
-      margin-bottom: 18px;
-    }
 
     &::before {
       display: flex;
@@ -21,7 +24,7 @@
       background-position: center;
       background-size: 34px 34px;
       border-radius: 50%;
-      margin-bottom: 11px;
+      margin-bottom: 10px;
     }
 
     &:nth-child(1)::before {
@@ -44,5 +47,44 @@
 
   &__text {
     text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .services {
+    padding: 40px 0 47px;
+
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 50px;
+      grid-row-gap: 0px;
+    }
+
+    &__item::before {
+      width: 67px;
+      height: 67px;
+      background-size: 35px 35px;
+      margin-bottom: 15px;
+    }
+
+    &__title {
+      @include font(20px, 33px);
+      margin-bottom: 16px;
+    }
+
+    &__text {
+      @include font(18px, 28px);
+    }
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .services {
+    padding-bottom: 19px;
+
+    &__list {
+      grid-column-gap: 71px;
+    }
   }
 }

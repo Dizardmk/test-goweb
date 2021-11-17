@@ -23,7 +23,7 @@
 
   &__text {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 49px;
   }
 
   &__list {
@@ -47,5 +47,56 @@
 
   &__position {
     text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .our-team {
+    padding: 48px 0 59px;
+
+    &__subtitle {
+      @include font(20px, 33px);
+    }
+
+    &__text {
+      @include font(18px, 28px);
+      margin-bottom: 49px;
+    }
+
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 0px;
+    }
+
+    &__item {
+      width: 223px;
+    }
+
+    &__name {
+      @include font(25px, 32px);
+      margin: 14px 0 12px;
+    }
+
+    &__position {
+      @include font(18px, 28px);
+    }
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .our-team {
+    &__text {
+      margin-bottom: 45px;
+    }
+
+    &__list {
+      grid-column-gap: 15px;
+    }
+
+    &__item {
+      width: 420px;
+    }
   }
 }

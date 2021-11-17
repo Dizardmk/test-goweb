@@ -32,10 +32,12 @@
     @extend %flex-center;
     width: 156px;
     height: 45px;
+    @include font(16px, 26px);
     background-color: $accent-color;
     border: none;
     border-radius: 5px;
     color: $secondary-text-color;
+    cursor: pointer;
   }
 
   &__button-icon {
@@ -52,5 +54,40 @@
   .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url('../images/home/showcase@2x.jpg');
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 407px 0 412px;
+
+    &__title {
+      @include font(55px, 66px);
+      margin-bottom: 25px;
+    }
+
+    &__subtitle {
+      margin-bottom: 29px;
+    }
+
+    &__button {
+      width: 165px;
+      height: 48px;
+      @include font(18px, 28px);
+    }
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .hero {
+    padding: 279px 0 284px;
+
+    &__button {
+      transition: all 0.2s linear;
+      &:focus,
+      &:hover {
+        filter: opacity(0.9);
+      }
+    }
   }
 }
